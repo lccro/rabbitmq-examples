@@ -61,8 +61,7 @@ class Application(Gtk.Application):
         return 0
 
 
-def show_frame():
-    global app
+def show_frame(app, cap):
     if app is None:
         return True
     if not cap.isOpened():
@@ -94,5 +93,5 @@ if __name__ == '__main__':
     greyscale = False
 
     app = Application()
-    GLib.idle_add(show_frame)
+    GLib.idle_add(show_frame, app, cap)
     app.run(sys.argv)

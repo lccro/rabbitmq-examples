@@ -1,0 +1,2 @@
+PyGObject
+opencv-contrib-python

@@ -17,6 +17,7 @@ class MainWindow(Gtk.ApplicationWindow):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.dlg_about.connect('response', lambda d, r: d.hide_on_delete())
         self.dlg_about.connect('delete-event', lambda d, r: d.hide_on_delete())
 
     def menu_about(self, *args):
